@@ -1,25 +1,51 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import AuthCard2 from './user/AuthCard2';
+import ItemCard from './components/ItemCard';
+import CartPage from './components/CartPage';
+import NavBar from './components/NavBar';
+import BuyingPage from './components/BuyingPage';
+import ThankYouPage from './components/ThankYouPage';
 
-function App() {
+const App = () => {
+  const [cartItems, setCartItems] = useState([]);
+  const [isDarkMode, setIsDarkMode] = useState(false);
+  const [user, setUser] = useState(null);  // Add user state
+
+  const addToCart = (item) => {
+    setCartItems((prevItems) => [...prevItems, item]);
+  };
+
+  const removeFromCart = (id) => {
+    setCartItems((prevItems) => prevItems.filter(item => item._id !== id));
+  };
+
+  const emptyCart = () => {
+    setCartItems([]);
+  };
+
+  const toggleTheme = () => {
+    setIsDarkMode(prevMode => !prevMode);
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <NavBar 
+        cartItemCount={cartItems.length} 
+        toggleTheme={toggleTheme} 
+        isDarkMode={isDarkMode} 
+        user={user}  // Pass user to NavBar
+      />
+      <Routes>
+        <Route path="/" element={<AuthCard2 setUser={setUser} />} />
+        <Route path="/auth" element={<AuthCard2 setUser={setUser} />} />
+        <Route path="/items" element={<ItemCard addToCart={addToCart} isDarkMode={isDarkMode} toggleTheme={toggleTheme} />} />
+        <Route path="/cart" element={<CartPage cartItems={cartItems} isDarkMode={isDarkMode} toggleTheme={toggleTheme} removeFromCart={removeFromCart} emptyCart={emptyCart} />} />
+        <Route path="/thank-you" element={<ThankYouPage isDarkMode={isDarkMode} />} />
+        <Route path="/buy/:id" element={<BuyingPage cartItems={cartItems} />} /> {/* Route for BuyingPage with parameter */}
+      </Routes>
+    </Router>
   );
-}
+};
 
 export default App;

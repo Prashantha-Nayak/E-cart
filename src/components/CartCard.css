@@ -1,0 +1,39 @@
+.cart-card {
+  display: flex;
+  align-items: center;
+  margin: 10px 0;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+  overflow: hidden; /* Ensures any overflow is clipped */
+}
+
+.cart-item-image {
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+  margin-right: 10px;
+  flex-shrink: 0; /* Prevents image from shrinking */
+  border-radius: 5px; /* Optional: adds rounded corners to the image */
+}
+
+.cart-item-details {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1; /* Allows the details section to take up available space */
+  overflow: hidden; /* Ensures text does not overflow */
+}
+
+.cart-item-name {
+  margin: 0;
+  font-size: 16px;
+  white-space: nowrap; /* Prevents text from wrapping */
+  overflow: hidden; /* Ensures text does not overflow */
+  text-overflow: ellipsis; /* Adds ellipsis if text overflows */
+}
+
+.cart-item-price {
+  margin: 5px 0 0 0;
+  font-size: 14px;
+}

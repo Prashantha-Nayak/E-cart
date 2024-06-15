@@ -1,0 +1,158 @@
+.items-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Responsive grid */
+  gap: 10px;
+  padding: 20px;
+ 
+}
+
+.card-wrap {
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: transform 0.3s, box-shadow 0.3s;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%; /* Take full width of grid item */
+  max-width: 300px; /* Adjusted maximum width */
+  height: auto; /* Adjusted height */
+  position: relative; /* Ensure relative positioning for description */
+}
+
+.card-wrap:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+.item-image-wrapper {
+  position: relative;
+  width: 100%;
+  padding-top: 56.25%; /* 16:9 Aspect Ratio */
+  overflow: hidden; /* Hide overflow */
+}
+
+.item-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 150%; /* Adjusted height to 100% */
+  object-fit:cover; /* Maintain aspect ratio and cover entire container */
+  transition: transform 0.3s;
+  
+}
+
+
+.info-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: #fff;
+  border: none;
+  padding: 4px 8px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 1rem; /* Adjusted font size */
+  transition: background-color 0.3s, color 0.3s;
+  opacity: 0; /* Initially hidden */
+  visibility: hidden; /* Hide from view */
+  transform: scale(0); /* Initial transform for animation */
+}
+
+.card-wrap:hover .info-btn {
+  opacity: 1; /* Show button on hover */
+  visibility: visible; /* Make it visible */
+  transform: scale(1); /* Scale up for smooth appearance */
+}
+
+.info-btn:hover {
+  background-color: #007bff;
+  color: #fff;
+}
+
+.item-details {
+  padding: 16px;
+  text-align: center;
+  flex-grow: 1; /* Ensure it fills the remaining space */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.item-name {
+  font-size: 1rem; /* Adjusted font size */
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 8px;
+  text-align: center;
+  line-height: 1.2; /* Improved line height for readability */
+}
+
+.item-price {
+  font-size: 1.4rem; /* Adjusted font size */
+  color: #666;
+  margin-bottom: 8px;
+}
+
+.item-rating {
+  font-size: 1rem; /* Adjusted font size */
+  color: #ffcc00;
+}
+
+.addcart-btn {
+  background-color: #007bff;
+  color: #ffffff;
+  border: none;
+  padding: 4px 12px; /* Adjusted padding */
+  border-radius: 20px;
+  cursor: pointer;
+  width: 100%; /* Full width button */
+  transition: background-color 0.3s;
+  margin-top: 8px;
+}
+
+.addcart-btn:hover {
+  background-color: #0056b3;
+}
+
+.item-description {
+  font-size: 0.9rem; /* Adjusted font size */
+  color: #999;
+  margin-bottom: 16px;
+  max-height: 0; /* Initially hidden */
+  overflow: hidden; /* Hide any overflow content */
+  transition: max-height 0.3s ease-out; /* Smooth animation for height change */
+}
+
+.item-description.show {
+  max-height: 100px; /* Adjust to fit the maximum expected height of description */
+  overflow: auto; /* Enable scrolling if necessary */
+}
+
+/* Dark mode styles */
+.dark-mode .card-wrap {
+  background-color: #444; /* Dark background color */
+  color: #fff; /* Light text color */
+  box-shadow: 0 2px 12px rgba(255, 255, 255, 0.1);
+}
+
+.dark-mode .item-name,
+.dark-mode .item-price,
+.dark-mode .item-rating,
+.dark-mode .item-description {
+  color: #fff; /* Light text color */
+}
+
+.dark-mode .info-btn,
+.dark-mode .addcart-btn {
+  background-color: #007bff;
+  color: #fff;
+}
+
+.dark-mode .info-btn:hover,
+.dark-mode .addcart-btn:hover {
+  background-color: #0056b3;
+}

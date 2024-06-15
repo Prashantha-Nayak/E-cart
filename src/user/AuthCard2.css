@@ -1,0 +1,58 @@
+.container2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #e0e0e0;
+  }
+  
+  .card2 {
+    background: #fff;
+    padding: 3rem;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 350px;
+  }
+  
+  .card2 h2 {
+    margin-bottom: 2rem;
+    font-weight: 600;
+  }
+  
+  .card2 form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .card2 input {
+    margin-bottom: 1.5rem;
+    padding: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+  }
+  
+  .card2 button {
+    padding: 1rem;
+    border: none;
+    border-radius: 5px;
+    background-color: #28a745;
+    color: white;
+    cursor: pointer;
+    font-size: 1rem;
+  }
+  
+  .card2 button:hover {
+    background-color: #218838;
+  }
+  
+  .toggle-btn2 {
+    margin-top: 15px;
+    background-color: #6c757d;
+    color: white;
+  }
+  
+  .toggle-btn2:hover {
+    background-color: #5a6268;
+  }
+  

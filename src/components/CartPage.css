@@ -1,0 +1,97 @@
+/* CartPage.css */
+.cart-page {
+  padding: 50px;
+}
+
+.cart-item-card {
+  display: flex;
+  align-items: center;
+  border: 1px solid #ddd;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.cart-item-image {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  margin-right: 20px;
+  border-radius: 5px; /* Optional: adds rounded corners to the image */
+}
+
+.cart-item-details {
+  flex: 1;
+}
+
+.cart-item-name {
+  margin: 0;
+  font-size: 18px;
+  white-space: nowrap; /* Prevents text from wrapping */
+  overflow: hidden; /* Ensures text does not overflow */
+  text-overflow: ellipsis; /* Adds ellipsis if text overflows */
+}
+
+.cart-item-price {
+  margin: 5px 0;
+  font-size: 16px;
+}
+
+.buy-now-btn {
+  background-color: #ff4081;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-block;
+  text-align: center;
+  margin-top: 10px; /* Adds some space between buttons and text */
+}
+
+@keyframes blink-animation {
+  50% {
+    opacity: 0;
+  }
+}
+
+.remove-btn {
+  background-color: #ff4040;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-right: 10px;
+}
+
+.empty-cart-btn {
+  background-color: #ff4040;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-bottom: 20px;
+}
+
+/* Dark mode styles */
+.dark-mode {
+  background-color: #333;
+  color: white;
+}
+
+.dark-mode .cart-item-card {
+  border-color: #555;
+}
+
+.dark-mode .buy-now-btn {
+  background-color: #ff4081;
+}
+
+.dark-mode .remove-btn,
+.dark-mode .empty-cart-btn {
+  background-color: #ff4040;
+}

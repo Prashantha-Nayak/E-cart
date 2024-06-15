@@ -1,0 +1,219 @@
+.navbar {
+    background-color: #ffffff; /* Light background color */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Shadow for a floating effect */
+    padding: 10px 20px; /* Padding around the navbar */
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000; /* Ensure it's above other content */
+    transition: background-color 0.3s ease;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .navbar.dark-mode {
+    background-color: #333; /* Dark background color for dark mode */
+    color: #fff; /* Light text color for dark mode */
+  }
+  
+  .navbar-container {
+    width: 100%;
+    max-width: 1200px; /* Limit width for better readability */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .navbar-left {
+    display: flex;
+    align-items: center;
+  }
+  
+  .navbar-center {
+    display: flex;
+    align-items: center;
+  }
+  
+  .navbar-search {
+    margin-left: 20px; /* Adjust margin for search input */
+  }
+  
+  .search-input {
+    padding: 8px 12px;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    font-size: 1.4rem;
+    width: 250px;
+  }
+  
+  .search-button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 20px;
+    margin-left: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .search-button:hover {
+    background-color: #0056b3;
+  }
+  
+  .navbar-right {
+    display: flex;
+    align-items: center;
+  }
+  
+  .navbar-menu ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+  }
+  
+  .navbar-menu ul li {
+    margin-right: 20px;
+  }
+  
+  .navbar-menu ul li:last-child {
+    margin-right: 0;
+  }
+  
+  .navbar-menu ul li .nav-link {
+    text-decoration: none;
+    color: #333;
+    font-size: 1.4rem;
+    transition: color 0.3s ease;
+  }
+  
+  .navbar-menu ul li .nav-link:hover {
+    color: #007bff;
+  }
+  
+  .theme-toggle-btn {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-left: 10px; /* Adjust spacing from menu items */
+  }
+  
+  .theme-toggle-btn.dark {
+    background-color: #343a40;
+  }
+  
+  .theme-toggle-btn.light {
+    background-color: #f8f9fa;
+    color: #333;
+  }
+  
+  .theme-toggle-btn:hover {
+    background-color: #0056b3;
+  }
+  
+  .cart-item-count {
+    display: inline-block;
+    background-color: #007bff;
+    color: #fff;
+    font-size: 0.8rem;
+    padding: 2px 8px;
+    border-radius: 12px;
+    margin-left: 5px;
+    transition: transform 0.2s ease;
+  }
+  
+  .cart-item-count:hover {
+    transform: scale(1.1);
+  }
+  /* NavBar.css */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  background-color: #f8f8f8;
+}
+
+.navbar.dark-mode {
+  background-color: #444;
+  color: white;
+}
+
+.navbar .navbar-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.navbar .navbar-logo a {
+  text-decoration: none;
+  color: inherit;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.navbar .navbar-center .navbar-search {
+  display: flex;
+  align-items: center;
+}
+
+.navbar .navbar-center .search-input {
+  padding: 5px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+.navbar .navbar-center .search-button {
+  padding: 5px 10px;
+  margin-left: 5px;
+  border: none;
+  border-radius: 5px;
+  background-color: #333;
+  color: white;
+}
+
+.navbar .navbar-right .navbar-menu ul {
+  list-style: none;
+  display: flex;
+  align-items: center;
+}
+
+.navbar .navbar-right .navbar-menu ul li {
+  margin-right: 20px;
+}
+
+.navbar .navbar-right .navbar-menu ul li .nav-link {
+  text-decoration: none;
+  color: inherit;
+}
+
+.navbar .navbar-theme-toggle .theme-toggle-btn {
+  padding: 5px 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.theme-toggle-btn.dark {
+  background-color: #333;
+  color: white;
+}
+
+.theme-toggle-btn.light {
+  background-color: #fff;
+  color: black;
+}
+
+.cart-item-count {
+  background-color: red;
+  color: white;
+  border-radius: 50%;
+  padding: 2px 5px;
+  font-size: 12px;
+}
